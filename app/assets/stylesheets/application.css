@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+ 
+ /* common */
+
+body {
+	font-size: 12px;
+	font-family: YuGothic,'Yu Gothic','ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN','Osaka',sans-serif;
+}
+
+p {
+	margin: 24px;
+}
+
+.show {
+	float: left;
+	list-style-type: none;
+}

@@ -1,0 +1,28 @@
+<body>
+	<table>
+		<tr>
+			<td>
+				Title:
+			</td>
+			<td>
+				<%= @book.title %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Body:
+			</td>
+			<td>
+				<%= @book.body %>
+			</td>
+		</tr>
+	</table>
+	<a>
+		<%=link_to "Edit", edit_book_path(@book.id) %>
+    </a>
+    |
+	<a>
+		<%=link_to "Back", books_path %>
+    </a>
+	
+</body>
