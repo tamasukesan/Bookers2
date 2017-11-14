@@ -17,15 +17,49 @@
  /* common */
 
 body {
-	font-size: 12px;
-	font-family: YuGothic,'Yu Gothic','ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN','Osaka',sans-serif;
+	background-color: #fff;
+    color: #333;
+	font-size: 13px;
+	font-family: verdana, arial, helvetica, sans-serif;
+	line-height: 18px;
+    margin: 33px
 }
 
-p {
-	margin: 24px;
+p, ol, ul, td {
+	/*margin: 24px;*/
+	font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    margin: 33px;
 }
 
 .show {
 	float: left;
 	list-style-type: none;
+}
+
+#notice {
+	color: green;
+}
+
+div.field, div.actions {
+	margin-bottom: 10px;
+}
+
+a:visited {
+    color: #666;
+}
+
+td {
+    padding-bottom: 7px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+th {
+    padding-bottom: 5px;
+}
+
+label {
+    display: block;
 }

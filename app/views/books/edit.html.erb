@@ -2,13 +2,15 @@
 <!-- form_for部分 -->
 <%= form_for(@book) do |f| %>
  
-    <div>Title</div>
+    <div class="field">Title<br>
     <%= f.text_field :title %>
+    </div>
  
-    <div>Body</div>
-    <%= f.text_area :body %><br><br>
+    <div class="field">Body<br>
+    <%= f.text_area :body %>
+    </div>
  
-    <%= f.submit %>
+    <div class="actions"><%= f.submit %></div>
  
 <% end %>
 
