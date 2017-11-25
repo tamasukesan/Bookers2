@@ -1,0 +1,72 @@
+<div class='body'>
+    <div class='container'>
+        <% if flash[:notice] %>
+          <p id="notice">
+            <%= flash[:notice] %>
+          </p>
+        <% end %>
+
+      <div class='row'>
+        <div class='col-xs-3'>
+           <h2>User info</h2>
+             <table class='table'>
+               <tr>
+                <div class="pro_img">
+                  <%= attachment_image_tag current_user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+                </div>
+                </tr>
+                <tr>
+              	  <th>name</th>
+              	  <th><%= current_user.name %></th>
+                </tr>
+                <tr>
+              	  <th>introduction</th>
+              	  <th><%= current_user.introduction %></th>
+                </tr>
+             </table>
+             <div class="row">
+            <%= link_to '　', edit_user_path(current_user.id), class:"col-xs-12 btn btn-default glyphicon glyphicon-wrench" %>
+            </div>
+
+
+
+<%= render 'users/list', book: @book %>
+
+            <div class='col-xs-9'>
+            	<h2>Users</h2>
+                  <table class='table table-hover table-inverse'>
+                    <thead>
+                      <tr>
+                        <th class=col-xs-5>image</th>
+                        <th class=col-xs-5>name</th>
+                        <th></th>
+                        <th></th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+		        	<% @users.each do |user| %>
+
+                        <tr>
+                          <td>
+                            <div class='pro_img' >
+                              <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+                            </div>
+                          </td>
+                          <td>
+                            <%= user.name %>
+                          </td>
+                          <td>
+                            <%= link_to "show", user_path(user.id) %>
+                          </td>
+                        </tr>
+                      <% end %>
+                    </tbody>
+                  </table>
+                  <div class="text-center">
+                    <%= paginate @users, class: "pagenate" %>
+                  </div>
+		        </div>
+		    </div>
+    </div>
+</div>
