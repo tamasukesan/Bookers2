@@ -1,0 +1,39 @@
+<div class='body'>
+      <div class='container'>
+        
+        <% if @user.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= @user.errors.count %>件の整備不能が発生！！</h2>
+                  <ul>
+                  <% @user.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                  </ul>
+                </div>
+        <% end %>
+      
+      	<h2>User info</h2>
+
+            <%= form_for(@user) do |f| %>
+
+              <div class="field">
+                <label for="user_name">Name</label>
+                <%= f.text_field :name, autofocus: true, id:"user_name" %>
+              </div>
+
+              <div class="field">
+                <label for="profile_image">Image</label>
+                <%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-edit-form" %>
+              </div>
+
+              <div class="field">
+                <label for="user_Introduction">Introduction</label>
+                <%= f.text_area :introduction, id:"user_Introduction" %>
+              </div>
+
+              <div class="actions">
+                <%= f.submit "Update User" %>
+              </div>
+            <% end %>
+      </div>
+    </div>
